@@ -3,8 +3,13 @@ Java + Spring Boot で構築した EC サイト。
 ## 新しく学習、取り組んだと
 ```txt
 vscode + copilot でのコーディング
+簡易的な開発フローの作成とそれに則った開発
+コーディングなど設計
 DI
+AOPでのログ出力
 DBのmigration
+Render
+Javaの監視
 ```
 ## 開発フロー
 ```
