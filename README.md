@@ -1,6 +1,6 @@
 # EC1000本ノック #001
 Java + Spring Boot で構築した EC サイト。
-## 新しく学習したこと
+## 新しく学習、取り組んだと
 ```txt
 vscode + copilot でのコーディング
 DI
