@@ -1,5 +1,11 @@
 # EC1000本ノック #001
 Java + Spring Boot で構築した EC サイト。
+## 新しく学習したこと
+```txt
+vscode + copilot でのコーディング
+DI
+DBのmigration
+```
 ## 使用技術
 
 ### バックエンド
