@@ -12,12 +12,9 @@ Bean Validation
 Spring AOP
 Spring Actuator
 Flyway
-PostgreSQL
 Lombok
 Gradle
 ```
-
-
 ### フロントエンド
 
 ```txt
@@ -27,9 +24,11 @@ CSS
 Tailwind CSS
 JavaScript
 ```
-
+### DB
+```txt
+PostgreSQL
+```
 ## DBテーブル
-
 users
 
 | カラム名 | 型 | 説明 |
