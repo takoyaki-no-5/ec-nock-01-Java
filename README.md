@@ -35,19 +35,14 @@ PostgreSQL
 | name | varchar | ユーザー名 |
 | email | varchar | メールアドレス |
 | created_at | timestamp | 作成日時 |
-
-
 ### product_categories
-
 | カラム名 | 型 | 説明 |
 |---|---|---|
 | id | bigint | PK |
 | name | varchar | カテゴリ名 |
 | status | varchar | CategoryStatus(enum) |
 | created_at | timestamp | 作成日時
-
-products
-
+### products
 カラム名 | 型 | 説明 |
 |---|---|---|
 | id | bigint | PK |
@@ -59,20 +54,14 @@ products
 | image_url | varchar | 商品画像URL |
 | status | varchar | ProductStatus(enum) |
 | created_at | timestamp | 作成日時 |
-
-
-
-carts
-
+### carts
 | カラム名 | 型 | 説明 |
 |---|---|---|
 | id | bigint | PK |
 | user_id | bigint | FK |
 | status | varchar | CartStatus(enum) |
 | created_at | timestamp | 作成日時 |
-
-cart_items
-
+### cart_items
 | カラム名 | 型 | 説明 |
 |---|---|---|
 | id | bigint | PK |
@@ -80,10 +69,7 @@ cart_items
 | product_id | bigint | FK |
 | quantity | integer | 数量 |
 | created_at | timestamp | 作成日時 |
-
-
-orders
-
+### orders
 | カラム名 | 型 | 説明 |
 |---|---|---|
 | id | bigint | PK |
@@ -91,9 +77,7 @@ orders
 | total_price | integer | 合計金額 |
 | status | varchar | OrderStatus(enum) |
 | created_at | timestamp | 作成日時
-
-order_items
-
+### order_items
 | カラム名 | 型 | 説明 |
 |---|---|---|
 | id | bigint | PK |
@@ -103,33 +87,29 @@ order_items
 | price | integer | 注文時価格 |
 | quantity | integer | 数量 |
 | created_at | timestamp | 作成日時 |
-
 ## enum
-
-ProductStatus
-
+### ProductStatus
 ACTIVE
 HIDDEN
 SOLD_OUT
 
 ---
 
-CartStatus
-
+### CartStatus
 ACTIVE
 ORDERED
 EXPIRED
 
 ---
 
-OrderStatus
+### OrderStatus
 
 CREATED
 CANCELLED
 
 ---
 
-CategoryStatus
+### CategoryStatus
 
 ACTIVE
 HIDDEN
