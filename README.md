@@ -57,6 +57,10 @@ JavaScript
 ```txt
 PostgreSQL
 ```
+### PaaS
+```txt
+Render
+```
 ## DBテーブル
 ### users
 | カラム名 | 型 | 説明 |
