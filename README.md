@@ -16,7 +16,6 @@ Lombok
 Gradle
 ```
 ### フロントエンド
-
 ```txt
 Thymeleaf
 HTML
@@ -29,8 +28,7 @@ JavaScript
 PostgreSQL
 ```
 ## DBテーブル
-users
-
+### users
 | カラム名 | 型 | 説明 |
 |---|---|---|
 | id | bigint | PK |
@@ -39,7 +37,7 @@ users
 | created_at | timestamp | 作成日時 |
 
 
-product_categories
+### product_categories
 
 | カラム名 | 型 | 説明 |
 |---|---|---|
