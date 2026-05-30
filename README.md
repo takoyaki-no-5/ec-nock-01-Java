@@ -4,9 +4,9 @@ Java + Spring Boot で構築した EC サイト。
 - vscode + copilot でのコーディング
 - v0を用いたデザイン作成
 - wsl環境での開発
-- 簡易的な開発フローの作成とそれに則った開発
-  ユースケース(触りだけ作って断念)
-  ER図の作成(schema.dbmlから作成)
+- 簡易的な開発フローの作成とそれに則った開発  
+  ユースケース(触りだけ作って断念)  
+  ER図の作成(schema.dbmlから作成)  
 - コーディングなど設計
 - DI
 - AOP
@@ -63,32 +63,28 @@ ER図、スキーマドキュメント自動生成
 ```
 ## 使用技術
 
-### バックエンド
-Language: 
-  Java 21
-Framework: 
-  Spring Boot
-build: 
-  Gradle
-
+### Backend
+- Java 21
+- Spring Boot
+- Gradle
+#### Main Libraries
 - Spring MVC
-- JOOQ
+- jOOQ
 - Bean Validation
 - Spring AOP
 - Spring Actuator
 - Flyway
 - Lombok
-### フロントエンド
+### Frontend
 - JavaScript
 - Thymeleaf
 - HTML
 - CSS
 - Tailwind CSS
 ### DB
-PostgreSQL
+- PostgreSQL
 ### PaaS
 Render
-## DB
-データベースのスキーマ
-- [schema.dbml](./docs/schema.dbml)
+## DB_Schema
+[schema.dbml](./docs/schema.dbml)  
 ![ERD](./docs/ERD.png)
