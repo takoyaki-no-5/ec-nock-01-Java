@@ -94,7 +94,8 @@ Render
 | updated_at | DATETIME | 更新日時 |
 
 ---
-### product_categories| カラム名 | 型 | 説明 |
+### product_categories
+| カラム名 | 型 | 説明 |
 |----------|----|------|
 | id | BIGINT | PK |
 | name | VARCHAR | 商品名 |
@@ -166,6 +167,7 @@ Render
 
 ---
 ## ER図
+```txt
 users
 │
 ├── carts
@@ -175,7 +177,7 @@ users
 └── orders
      │
      └── order_details ── products
-
+```
 ---
 
 
