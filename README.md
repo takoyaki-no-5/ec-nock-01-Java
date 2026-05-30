@@ -3,12 +3,14 @@ Java + Spring Boot で構築した EC サイト。
 ## 新しく学習、取り組んだこと
 ```txt
 vscode + copilot でのコーディング
+v0を用いたデザイン作成
 簡易的な開発フローの作成とそれに則った開発
   ユースケース(触りだけ作って断念)
 コーディングなど設計
 DI
 AOP
 DBのmigration
+JOOQ
 Render
 Javaの監視
 ```
@@ -55,7 +57,7 @@ README修正
 Java 21
 Spring Boot
 Spring MVC
-Spring Data JPA
+JOOQ
 Bean Validation
 Spring AOP
 Spring Actuator
