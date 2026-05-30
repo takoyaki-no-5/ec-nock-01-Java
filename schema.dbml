@@ -1,0 +1,63 @@
+Table users {
+  id bigint [pk]
+  name varchar
+  email varchar
+  password varchar
+  role varchar
+  created_at datetime
+  updated_at datetime
+}
+
+Table product_categories {
+  id bigint [pk]
+  name varchar
+  created_at datetime
+  updated_at datetime
+}
+
+Table products {
+  id bigint [pk]
+  category_id bigint [ref: > product_categories.id]
+  name varchar
+  description text
+  price decimal
+  stock int
+  created_at datetime
+  updated_at datetime
+}
+
+Table carts {
+  id bigint [pk]
+  user_id bigint [ref: > users.id]
+  created_at datetime
+  updated_at datetime
+}
+
+Table cart_items {
+  id bigint [pk]
+  cart_id bigint [ref: > carts.id]
+  product_id bigint [ref: > products.id]
+  quantity int
+  created_at datetime
+  updated_at datetime
+}
+
+Table orders {
+  id bigint [pk]
+  user_id bigint [ref: > users.id]
+  order_date datetime
+  status varchar
+  total_amount decimal
+  created_at datetime
+  updated_at datetime
+}
+
+Table order_items {
+  id bigint [pk]
+  order_id bigint [ref: > orders.id]
+  product_id bigint [ref: > products.id]
+  quantity int
+  unit_price decimal
+  created_at datetime
+  updated_at datetime
+}
