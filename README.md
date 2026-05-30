@@ -142,7 +142,7 @@ Render
 ---
 
 ### orders
-|| カラム名 | 型 | 説明 |
+| カラム名 | 型 | 説明 |
 |----------|----|------|
 | id | BIGINT | PK |
 | user_id | BIGINT | FK |
