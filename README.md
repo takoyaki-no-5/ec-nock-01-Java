@@ -69,8 +69,13 @@ ER図、スキーマドキュメント自動生成
 
 ### バックエンド
 ```txt
-Java 21
-Spring Boot
+言語: 
+  Java 21
+フレームワーク: 
+  Spring Boot
+ビルド: 
+  Gradle
+
 Spring MVC
 JOOQ
 Bean Validation
@@ -78,15 +83,14 @@ Spring AOP
 Spring Actuator
 Flyway
 Lombok
-Gradle
 ```
 ### フロントエンド
 ```txt
+JavaScript
 Thymeleaf
 HTML
 CSS
 Tailwind CSS
-JavaScript
 ```
 ### DB
 ```txt
