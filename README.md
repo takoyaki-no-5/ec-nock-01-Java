@@ -4,8 +4,12 @@ Java + Spring Boot で構築した EC サイト。
 ```txt
 vscode + copilot でのコーディング
 v0を用いたデザイン作成
+wsl環境での開発
+
 簡易的な開発フローの作成とそれに則った開発
   ユースケース(触りだけ作って断念)
+  ER図の作成(schema.dbmlから作成)
+
 コーディングなど設計
 DI
 AOP
@@ -14,6 +18,17 @@ JOOQ
 Render
 Javaの監視
 ```
+## 改善したいこと、新しく取り組みたくなったこと
+①ER図をdbmlから作ると、データベースを変更するたびにdbmlと画像を修正しないといけなくなる
+migrationから自動で生成するようにする
+```txt
+Migration
+↓
+DB
+↓
+ER図、スキーマドキュメント自動生成
+```
+
 ## ユースケース
 ### actor
 購入者
@@ -81,102 +96,10 @@ PostgreSQL
 ```txt
 Render
 ```
-## DBテーブル
-### users
-| カラム名 | 型 | 説明 |
-|----------|----|------|
-| id | BIGINT | PK |
-| name | VARCHAR | 名前 |
-| email | VARCHAR | メールアドレス |
-| password | VARCHAR | パスワード |
-| role | ENUM | purchaser/admin |
-| created_at | DATETIME | 作成日時 |
-| updated_at | DATETIME | 更新日時 |
-
----
-### product_categories
-| カラム名 | 型 | 説明 |
-|----------|----|------|
-| id | BIGINT | PK |
-| name | VARCHAR | カテゴリ名 |
-| created_at | DATETIME | 作成日時 |
-| updated_at | DATETIME | 更新日時 |
-
----
-### products
-| カラム名 | 型 | 説明 |
-|----------|----|------|
-| id | BIGINT | PK |
-| name | VARCHAR | 商品名 |
-| description | TEXT | 商品説明 |
-| price | DECIMAL | 価格 |
-| stock | INT | 在庫数 |
-| created_at | DATETIME | 作成日時 |
-| updated_at | DATETIME | 更新日時 |
-
----
-### carts
-| カラム名 | 型 | 説明 |
-|----------|----|------|
-| id | BIGINT | PK |
-| user_id | BIGINT | FK |
-| created_at | DATETIME | 作成日時 |
-| updated_at | DATETIME | 更新日時 |
-
----
-
-### cart_items
-| カラム名 | 型 | 説明 |
-|----------|----|------|
-| id | BIGINT | PK |
-| cart_id | BIGINT | FK |
-| product_id | BIGINT | FK |
-| quantity | INT | 数量 |
-| created_at | DATETIME | 作成日時 |
-| updated_at | DATETIME | 更新日時 |
-
----
-
-### orders
-| カラム名 | 型 | 説明 |
-|----------|----|------|
-| id | BIGINT | PK |
-| user_id | BIGINT | FK |
-| order_date | DATETIME | 注文日時 |
-| status | VARCHAR | 注文状態 |
-| total_amount | DECIMAL | 合計金額 |
-| created_at | DATETIME | 作成日時 |
-| updated_at | DATETIME | 更新日時 |
-
----
-
-### order_items
-| カラム名 | 型 | 説明 |
-|----------|----|------|
-| id | BIGINT | PK |
-| order_id | BIGINT | FK |
-| product_id | BIGINT | FK |
-| quantity | INT | 数量 |
-| unit_price | DECIMAL | 注文時単価 |
-| created_at | DATETIME | 作成日時 |
-| updated_at | DATETIME | 更新日時 |
-
----
-## ER図
-```txt
-users
-│
-├── carts
-│    │
-│    └── cart_items ── products
-│
-└── orders
-     │
-     └── order_details ── products
-```
----
-
-
+## DB
+データベースのスキーマ
+- [schema.dbml](./docs/schema.dbml)
+![ERD](./docs/ERD.png)
 ## enum
 ### ProductStatus
 ACTIVE
