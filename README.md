@@ -98,23 +98,19 @@ Render
 | カラム名 | 型 | 説明 |
 |----------|----|------|
 | id | BIGINT | PK |
-| name | VARCHAR | 商品名 |
-| description | TEXT | 商品説明 |
-| price | DECIMAL | 価格 |
-| stock | INT | 在庫数 |
+| name | VARCHAR | カテゴリ名 |
 | created_at | DATETIME | 作成日時 |
 | updated_at | DATETIME | 更新日時 |
 
 ---
-
 ### products
 | カラム名 | 型 | 説明 |
 |----------|----|------|
 | id | BIGINT | PK |
-| user_id | BIGINT | FK |
-| order_date | DATETIME | 注文日時 |
-| status | VARCHAR | 注文状態 |
-| total_amount | DECIMAL | 合計金額 |
+| name | VARCHAR | 商品名 |
+| description | TEXT | 商品説明 |
+| price | DECIMAL | 価格 |
+| stock | INT | 在庫数 |
 | created_at | DATETIME | 作成日時 |
 | updated_at | DATETIME | 更新日時 |
 
