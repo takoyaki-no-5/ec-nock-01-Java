@@ -84,63 +84,101 @@ Render
 ## DBテーブル
 ### users
 | カラム名 | 型 | 説明 |
-|---|---|---|
-| id | bigint | PK |
-| name | varchar | ユーザー名 |
-| email | varchar | メールアドレス |
-| created_at | timestamp | 作成日時 |
-### product_categories
-| カラム名 | 型 | 説明 |
-|---|---|---|
-| id | bigint | PK |
-| name | varchar | カテゴリ名 |
-| status | varchar | CategoryStatus(enum) |
-| created_at | timestamp | 作成日時
+|----------|----|------|
+| id | BIGINT | PK |
+| name | VARCHAR | 名前 |
+| email | VARCHAR | メールアドレス |
+| password | VARCHAR | パスワード |
+| role | ENUM | purchaser/admin |
+| created_at | DATETIME | 作成日時 |
+| updated_at | DATETIME | 更新日時 |
+
+---
+### product_categories| カラム名 | 型 | 説明 |
+|----------|----|------|
+| id | BIGINT | PK |
+| name | VARCHAR | 商品名 |
+| description | TEXT | 商品説明 |
+| price | DECIMAL | 価格 |
+| stock | INT | 在庫数 |
+| created_at | DATETIME | 作成日時 |
+| updated_at | DATETIME | 更新日時 |
+
+---
+
 ### products
-カラム名 | 型 | 説明 |
-|---|---|---|
-| id | bigint | PK |
-| category_id | bigint | FK |
-| name | varchar | 商品名 |
-| description | text | 商品説明 |
-| price | integer | 価格 |
-| stock | integer | 在庫数 |
-| image_url | varchar | 商品画像URL |
-| status | varchar | ProductStatus(enum) |
-| created_at | timestamp | 作成日時 |
+| カラム名 | 型 | 説明 |
+|----------|----|------|
+| id | BIGINT | PK |
+| user_id | BIGINT | FK |
+| order_date | DATETIME | 注文日時 |
+| status | VARCHAR | 注文状態 |
+| total_amount | DECIMAL | 合計金額 |
+| created_at | DATETIME | 作成日時 |
+| updated_at | DATETIME | 更新日時 |
+
+---
 ### carts
 | カラム名 | 型 | 説明 |
-|---|---|---|
-| id | bigint | PK |
-| user_id | bigint | FK |
-| status | varchar | CartStatus(enum) |
-| created_at | timestamp | 作成日時 |
+|----------|----|------|
+| id | BIGINT | PK |
+| user_id | BIGINT | FK |
+| created_at | DATETIME | 作成日時 |
+| updated_at | DATETIME | 更新日時 |
+
+---
+
 ### cart_items
 | カラム名 | 型 | 説明 |
-|---|---|---|
-| id | bigint | PK |
-| cart_id | bigint | FK |
-| product_id | bigint | FK |
-| quantity | integer | 数量 |
-| created_at | timestamp | 作成日時 |
+|----------|----|------|
+| id | BIGINT | PK |
+| cart_id | BIGINT | FK |
+| product_id | BIGINT | FK |
+| quantity | INT | 数量 |
+| created_at | DATETIME | 作成日時 |
+| updated_at | DATETIME | 更新日時 |
+
+---
+
 ### orders
-| カラム名 | 型 | 説明 |
-|---|---|---|
-| id | bigint | PK |
-| user_id | bigint | FK |
-| total_price | integer | 合計金額 |
-| status | varchar | OrderStatus(enum) |
-| created_at | timestamp | 作成日時
+|| カラム名 | 型 | 説明 |
+|----------|----|------|
+| id | BIGINT | PK |
+| user_id | BIGINT | FK |
+| order_date | DATETIME | 注文日時 |
+| status | VARCHAR | 注文状態 |
+| total_amount | DECIMAL | 合計金額 |
+| created_at | DATETIME | 作成日時 |
+| updated_at | DATETIME | 更新日時 |
+
+---
+
 ### order_items
 | カラム名 | 型 | 説明 |
-|---|---|---|
-| id | bigint | PK |
-| order_id | bigint | FK |
-| product_id | bigint | FK |
-| product_name | varchar | 注文時商品名 |
-| price | integer | 注文時価格 |
-| quantity | integer | 数量 |
-| created_at | timestamp | 作成日時 |
+|----------|----|------|
+| id | BIGINT | PK |
+| order_id | BIGINT | FK |
+| product_id | BIGINT | FK |
+| quantity | INT | 数量 |
+| unit_price | DECIMAL | 注文時単価 |
+| created_at | DATETIME | 作成日時 |
+| updated_at | DATETIME | 更新日時 |
+
+---
+## ER図
+users
+│
+├── carts
+│    │
+│    └── cart_items ── products
+│
+└── orders
+     │
+     └── order_details ── products
+
+---
+
+
 ## enum
 ### ProductStatus
 ACTIVE
